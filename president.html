@@ -18,11 +18,28 @@
 </form>
 
 
+
 <p id="result"></p>
+<div class="container">
+    <img src="Montane oriole.png" width="100",height="100" onclick="swapImage()"class="img-fluid" alt="Montane oriole image">
+</div>
 
 <script> 
+var useImage=1;
     var correct=0;
     var wrong=0;
+    function swapImage(){
+        switch(useImage)
+        {
+            case 1: <img src="Abyssinian Woodpecker.png" width="100" height="100" onclick="swapImage()"class="img-fluid" alt="Montane oriole image"></img>;
+            break;
+            case 2: <img src="Nicator.png" width="100" height="100" onclick="swapImage()"class="img-fluid" alt="Montane oriole image"></img>;
+            break;
+            case 3 :<img src="Montane oriole.png" width="100" height="100" onclick="swapImage()"class="img-fluid" alt="Montane oriole image"></img>;
+            break;
+
+        }
+    }
 function checkGuess(){
     console.log("Getting form values")
     secret = document.getElementById("president_name").value
