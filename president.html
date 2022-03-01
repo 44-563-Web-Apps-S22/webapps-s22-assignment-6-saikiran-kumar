@@ -2,19 +2,28 @@
 <html>
     <head>
         <title>Javascript Webpage</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
     </head>
  
 <body>
 
 <h2>President guess by Saikiran Kumar Mandapalli</h2>
-<form>
+<form style="background-color: aliceblue;">
     <label for="president_name">Enter the secret president name </label>
     <input type ="password" id="president_name" name="president_name" value="George Washington"> <br>
 
     <label for="guessing">Guess the president </label>
     <input type ="text" id="guessing" name="guessing"> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" onclick="checkGuess()" style="background-color: green;" value="Check the guess">
 </form>
 
 
@@ -35,13 +44,19 @@ function checkGuess(){
     if(secret == guess){
         correct+=1;
         alert("You got it right")
-        out.innerHTML= correct
+        out.innerHTML= "<b>Correct<b> " + correct + "<b> Wrong <b> " + wrong;
     } else {
         wrong+=1;
         alert("Wrong President")
-        out.innerHTML= wrong
+        out.innerHTML="<b>Correct<b> " + correct + "<b> Wrong <b> " + wrong;
     }
+    if(wrong >= 3){
+     wrongGuess();
 }
+}
+function wrongGuess(){
+            alert("Sorry, game over.");
+        }
 </script>
 <script>
     var useImage=1;
